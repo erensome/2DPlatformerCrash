@@ -7,5 +7,7 @@ public class AnimationStrings
     public const string IsOnWall = "isOnWall";
     public const string IsOnCeiling = "isOnCeiling";
     public const string YVelocity = "yVelocity";
-    public const string Jump = "jump";
+    public const string JumpTrigger = "jump";
+    public const string AttackTrigger = "attack";
+    public const string CanMove = "canMove";
 }
