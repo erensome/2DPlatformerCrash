@@ -1,5 +1,5 @@
 ﻿
-public class AnimationStrings
+public static class AnimationStrings
 {
     public const string IsMoving = "isMoving";
     public const string IsRunning = "isRunning";
@@ -10,4 +10,5 @@ public class AnimationStrings
     public const string JumpTrigger = "jump";
     public const string AttackTrigger = "attack";
     public const string CanMove = "canMove";
+    public const string HasTarget = "hasTarget";
 }

@@ -17,11 +17,8 @@ public class PlayerController : MonoBehaviour
     private Animator _animator;
     private Vector2 _moveInput;
 
-    public bool CanMove
-    {
-        get { return _animator.GetBool(AnimationStrings.CanMove);}
-    }
-    
+    public bool CanMove => _animator.GetBool(AnimationStrings.CanMove);
+
     private float CurrentMoveSpeed
     {
         get
@@ -49,6 +46,7 @@ public class PlayerController : MonoBehaviour
                 // Idle Speed - Not Moving
                 return 0;
             }
+            // Player can't move!
             return 0;
         }
     }
@@ -78,7 +76,6 @@ public class PlayerController : MonoBehaviour
     }
 
     private bool _isFacingRight = true;
-
     public bool IsFacingRight
     {
         get => _isFacingRight;
