@@ -11,4 +11,5 @@ public static class AnimationStrings
     public const string AttackTrigger = "attack";
     public const string CanMove = "canMove";
     public const string HasTarget = "hasTarget";
+    public const string IsAlive = "isAlive";
 }

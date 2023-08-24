@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 7909134611608390313}
   - component: {fileID: 7909134611608390231}
   - component: {fileID: 8524819263607779302}
+  - component: {fileID: 2487951793727903517}
+  - component: {fileID: 3121376790002006399}
   - component: {fileID: 8301679993507231837}
   - component: {fileID: 4026144759741805367}
-  - component: {fileID: 3121376790002006399}
-  - component: {fileID: 2487951793727903517}
+  - component: {fileID: 8355848006828134815}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -127,56 +128,26 @@ CapsuleCollider2D:
   m_Offset: {x: 0.012166232, y: -0.25603986}
   m_Size: {x: 0.5808025, y: 1.7350678}
   m_Direction: 0
---- !u!114 &8301679993507231837
-MonoBehaviour:
+--- !u!95 &2487951793727903517
+Animator:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7909134611608390312}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f03850b847b0a94f8640306e37b87fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  airWalkSpeed: 3
-  walkSpeed: 5
-  runSpeed: 8
-  jumpImpulse: 10
-  _isMoving: 0
-  _isRunning: 0
---- !u!114 &4026144759741805367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7909134611608390312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04cd04d30913b8d4dae0a2bca99c3fab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  castFilter:
-    useTriggers: 0
-    useLayerMask: 1
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 64
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  groundDistance: 0.05
-  wallDistance: 0.2
-  ceilingDistance: 0.05
-  _isGrounded: 0
-  _isOnWall: 0
-  _isOnCeiling: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fc3f622f5439d4647aa97668842cbb4e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &3121376790002006399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,23 +286,65 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!95 &2487951793727903517
-Animator:
-  serializedVersion: 4
+--- !u!114 &8301679993507231837
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7909134611608390312}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fc3f622f5439d4647aa97668842cbb4e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f03850b847b0a94f8640306e37b87fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  airWalkSpeed: 3
+  walkSpeed: 5
+  runSpeed: 8
+  jumpImpulse: 10
+  _isMoving: 0
+  _isRunning: 0
+--- !u!114 &4026144759741805367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7909134611608390312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04cd04d30913b8d4dae0a2bca99c3fab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  castFilter:
+    useTriggers: 0
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 64
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  groundDistance: 0.05
+  wallDistance: 0.2
+  ceilingDistance: 0.05
+  _isGrounded: 0
+  _isOnWall: 0
+  _isOnCeiling: 0
+--- !u!114 &8355848006828134815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7909134611608390312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c119c8d2db699d54e9d2861c6b14a2d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

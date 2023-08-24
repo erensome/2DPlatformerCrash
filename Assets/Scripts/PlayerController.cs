@@ -15,8 +15,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rb;
     private TouchingDirections _touchingDirections;
     private Animator _animator;
+    private Damageable _damageable;
     private Vector2 _moveInput;
-
+    
     public bool CanMove => _animator.GetBool(AnimationStrings.CanMove);
 
     private float CurrentMoveSpeed
@@ -87,11 +88,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private bool IsAlive => _animator.GetBool(AnimationStrings.IsAlive);
+    
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _touchingDirections = GetComponent<TouchingDirections>();
+        _damageable = GetComponent<Damageable>();
     }
 
     private void FixedUpdate()
@@ -107,10 +111,17 @@ public class PlayerController : MonoBehaviour
     {
         _moveInput = context.ReadValue<Vector2>();
         // Move the character when the player pressed A or D keys.
-        if (_moveInput.y == 0f)
+        if (IsAlive)
         {
-            IsMoving = _moveInput != Vector2.zero;
-            SetFacingDirection(_moveInput);
+            if (_moveInput.y == 0f)
+            {
+                IsMoving = _moveInput != Vector2.zero;
+                SetFacingDirection(_moveInput);
+            }
+        }
+        else
+        {
+            IsMoving = false;
         }
     }
 
@@ -142,6 +153,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
+        // check CanMove to prevent to jump when the player is attacking or the player's dead.
         if (context.started && _touchingDirections.IsGrounded && CanMove)
         {
             _animator.SetTrigger(AnimationStrings.JumpTrigger);
