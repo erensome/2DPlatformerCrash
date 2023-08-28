@@ -59,7 +59,7 @@ public class Damageable : MonoBehaviour
             }
             _timeSinceHit += Time.deltaTime;
         }
-        Hit(10);
+        //Hit(10);
     }
 
     public void Hit(int damage)
